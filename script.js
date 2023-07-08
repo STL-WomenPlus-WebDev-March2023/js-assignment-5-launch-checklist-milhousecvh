@@ -1,6 +1,4 @@
-// Write your JavaScript code here!
-
-const { formSubmission, pickPlanet, addDestinationInfo } = require("./scriptHelper");
+// const { formSubmission, pickPlanet, addDestinationInfo, myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
     const form = document.querySelector("form");
@@ -10,7 +8,7 @@ window.addEventListener("load", function() {
         let copilot = document.querySelector("input[name=copilotName]").value;
         let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
         let cargoMass = document.querySelector("input[name=cargoMass]").value;
-        let list = document.querySelector("input[name=faultyItems]").value;
+        let list = document.getElementById('faultyItems');
 
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass);
     });
@@ -32,6 +30,7 @@ window.addEventListener("load", function() {
         let imageUrl = planet.image;
         let moons = planet.moons;
         addDestinationInfo(document, name, diameter, star, distance, imageUrl, moons);
+        console.log(planet);
     })
 
 });
